@@ -1,0 +1,26 @@
+
+{
+  "id": "/",
+  "name": "AndinaCare - Mantenimiento Industrial",
+  "short_name": "AndinaCare",
+  "description": "Aplicación académica para la gestión de mantenimiento industrial, órdenes de trabajo e inventario.",
+  "lang": "es-CL",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#101923",
+  "background_color": "#101923",
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "/icons/andinacare.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

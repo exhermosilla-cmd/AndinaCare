@@ -1,0 +1,74 @@
+
+.wo-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 13px;
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.wo-timer--running {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.wo-timer--completed {
+  color: #166534;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.wo-timer--unavailable {
+  color: #64748b;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.wo-timer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.wo-timer__label {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.wo-timer__value {
+  font-size: 17px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+}
+
+.wo-timer__indicator {
+  width: 8px;
+  height: 8px;
+  margin-left: 3px;
+  flex-shrink: 0;
+  background: #16a34a;
+  border-radius: 50%;
+  animation: wo-timer-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes wo-timer-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 600px) {
+  .wo-timer {
+    width: 100%;
+  }
+}

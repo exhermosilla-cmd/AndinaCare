@@ -1,0 +1,45 @@
+/* ANDINACARE - ESTILOS DEL DASHBOARD PRINCIPAL */
+.dashboard-page { display:flex; flex-direction:column; gap:22px; color:var(--color-text); }
+.dashboard-header { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; }
+.dashboard-eyebrow { color:var(--color-info); font-size:10px; font-weight:800; letter-spacing:1.4px; }
+.dashboard-header h1 { margin:8px 0; font-size:clamp(23px,3vw,30px); letter-spacing:-.6px; }
+.dashboard-header p { margin:0; color:var(--color-muted); font-size:13px; }
+.dashboard-role { display:inline-block; margin-top:12px; color:#83c3ff; font-size:11px; font-weight:700; }
+.dashboard-period { display:flex; flex-direction:column; gap:7px; min-width:190px; color:var(--color-muted); font-size:11px; font-weight:700; }
+.dashboard-period select { min-height:42px; padding:0 12px; color:var(--color-text); background:var(--color-surface); border:1px solid var(--color-border); border-radius:9px; }
+.dashboard-connectivity { display:flex; flex-wrap:wrap; align-items:center; gap:18px; padding:13px 16px; background:var(--color-surface); border:1px solid var(--color-border); border-radius:12px; color:var(--color-muted); font-size:12px; }
+.dashboard-connectivity span { display:inline-flex; align-items:center; gap:8px; }
+.dashboard-online { color:#6ee0a8 !important; font-weight:700; }
+.dashboard-offline { color:#ffd078 !important; font-weight:700; }
+.dashboard-metrics-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.dashboard-metric { min-width:0; padding:18px; background:var(--color-surface); border:1px solid var(--color-border); border-radius:13px; }
+.dashboard-metric__top { display:flex; justify-content:space-between; align-items:center; gap:8px; color:var(--color-muted); font-size:11px; font-weight:700; }
+.dashboard-metric__icon { display:grid; place-items:center; width:36px; height:36px; color:#83c3ff; background:#193c5c; border-radius:10px; }
+.dashboard-metric__value { display:block; margin:15px 0 5px; font-size:30px; line-height:1; letter-spacing:-1px; }
+.dashboard-metric__detail { color:var(--color-muted); font-size:10px; }
+.dashboard-metric--warning .dashboard-metric__icon { color:#ffd078; background:#51401f; }
+.dashboard-metric--danger .dashboard-metric__icon { color:#ff9292; background:#522a30; }
+.dashboard-metric--success .dashboard-metric__icon { color:#6ee0a8; background:#174735; }
+.dashboard-metric--info .dashboard-metric__icon { color:#83c3ff; background:#193c5c; }
+.dashboard-charts-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.dashboard-panel { min-width:0; padding:20px; background:var(--color-surface); border:1px solid var(--color-border); border-radius:13px; }
+.dashboard-panel__heading { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+.dashboard-panel__heading h2 { margin:0 0 5px; font-size:15px; }
+.dashboard-panel__heading p { margin:0; color:var(--color-muted); font-size:11px; }
+.dashboard-panel__heading > span { color:var(--color-muted); font-size:11px; }
+.dashboard-chart { width:100%; height:220px; }
+.dashboard-chart--bar { height:240px; }
+.dashboard-legend { display:flex; flex-wrap:wrap; gap:12px 18px; justify-content:center; color:var(--color-muted); font-size:11px; }
+.dashboard-legend span { display:flex; align-items:center; gap:6px; }
+.dashboard-legend i { width:9px; height:9px; border-radius:50%; }
+.dashboard-legend strong { color:var(--color-text); }
+.dashboard-empty,.dashboard-message { margin:18px 0; color:var(--color-muted); font-size:12px; text-align:center; }
+.dashboard-error { padding:12px 14px; color:#ff9292; background:#522a30; border:1px solid #7d3b43; border-radius:9px; font-size:12px; }
+.dashboard-table-wrap { width:100%; overflow-x:auto; }
+.dashboard-table { width:100%; border-collapse:collapse; text-align:left; font-size:12px; }
+.dashboard-table th { padding:11px 10px; color:var(--color-muted); font-size:10px; text-transform:uppercase; letter-spacing:.5px; border-bottom:1px solid var(--color-border); }
+.dashboard-table td { padding:12px 10px; color:var(--color-text); border-bottom:1px solid var(--color-border); }
+.dashboard-table tbody tr:last-child td { border-bottom:0; }
+@media (max-width:1100px) { .dashboard-metrics-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:700px) { .dashboard-header { align-items:stretch; flex-direction:column; } .dashboard-period { width:100%; } .dashboard-charts-grid { grid-template-columns:1fr; } .dashboard-metrics-grid { gap:10px; } .dashboard-metric { padding:14px; } .dashboard-metric__value { font-size:26px; } .dashboard-connectivity { align-items:flex-start; flex-direction:column; gap:10px; } .dashboard-panel { padding:15px; } }
+@media (max-width:380px) { .dashboard-metrics-grid { grid-template-columns:1fr; } }

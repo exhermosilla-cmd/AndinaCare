@@ -1,0 +1,42 @@
+/* ANDINACARE - MÉTRICAS Y REPORTES */
+.reports-page{display:flex;flex-direction:column;gap:20px;color:var(--color-text)}
+.reports-header{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.reports-eyebrow{font-size:10px;font-weight:800;letter-spacing:1.4px;color:var(--color-info)}
+.reports-header h1{margin:7px 0;font-size:clamp(23px,3vw,30px)}
+.reports-header p,.reports-panel__heading p{margin:0;color:var(--color-muted);font-size:12px}
+.reports-user{display:block;margin-top:9px;color:var(--color-muted);font-size:11px}
+.reports-filters{display:flex;gap:10px}
+.reports-filters label{display:flex;flex-direction:column;gap:6px;min-width:175px;color:var(--color-muted);font-size:11px;font-weight:700}
+.reports-filters select{min-height:40px;padding:0 10px;color:var(--color-text);background:var(--color-surface);border:1px solid var(--color-border);border-radius:8px}
+.reports-context{display:flex;flex-wrap:wrap;gap:16px;padding:12px 15px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:10px;color:var(--color-muted);font-size:11px}
+.reports-context span{display:inline-flex;align-items:center;gap:7px}
+.reports-metrics-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.reports-metric{min-width:0;padding:16px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px}
+.reports-metric__top{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--color-muted);font-size:11px;font-weight:700}
+.reports-metric__icon{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;color:#83c3ff;background:#193c5c}
+.reports-metric__value{display:block;margin:14px 0 6px;font-size:clamp(19px,2vw,26px);line-height:1.15;overflow-wrap:anywhere}
+.reports-metric small{color:var(--color-muted);font-size:10px;line-height:1.4}
+.reports-metric--muted .reports-metric__value{font-size:17px;color:var(--color-muted)}
+.reports-metric--success .reports-metric__icon{color:#6ee0a8;background:#174735}
+.reports-charts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.reports-panel{min-width:0;padding:18px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px}
+.reports-panel__heading{margin-bottom:14px}
+.reports-panel__heading h2{margin:0 0 5px;font-size:15px}
+.reports-chart{height:260px;width:100%}
+.reports-empty,.reports-state{padding:18px 0;color:var(--color-muted);font-size:12px}
+.reports-error{padding:14px;color:#ff9292;background:var(--color-surface);border:1px solid var(--color-border);border-radius:9px}
+.reports-table-wrap{width:100%;overflow-x:auto}
+.reports-table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap}
+.reports-table th,.reports-table td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--color-border)}
+.reports-table th{color:var(--color-muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+.reports-table td{color:var(--color-text)}
+.reports-method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.reports-method-grid article{padding:13px;background:var(--color-background);border:1px solid var(--color-border);border-radius:9px}
+.reports-method-grid h3{margin:0 0 8px;font-size:12px;color:var(--color-info)}
+.reports-method-grid p,.reports-assumptions{margin:0;color:var(--color-muted);font-size:11px;line-height:1.65}
+.reports-method-grid strong{color:var(--color-text)}
+.reports-assumptions{margin-top:15px;padding-top:13px;border-top:1px solid var(--color-border)}
+.reports-warning{margin:12px 0 0;padding:10px;border-radius:8px;color:#ffd078;background:#51401f;font-size:11px}
+@media(max-width:1050px){.reports-metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.reports-header{align-items:stretch;flex-direction:column}.reports-filters{width:100%}.reports-filters label{flex:1;min-width:0}.reports-charts-grid,.reports-method-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.reports-metrics-grid{grid-template-columns:1fr 1fr;gap:9px}.reports-metric{padding:12px}.reports-metric__value{font-size:19px}.reports-context{gap:9px;flex-direction:column}.reports-filters{flex-direction:column}}

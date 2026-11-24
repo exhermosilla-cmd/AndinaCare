@@ -1,0 +1,334 @@
+
+/*
+ * ANDINACARE - ESTILOS DEL REGISTRO FOTOGRÁFICO
+ *
+ * Compatible con WorkOrderPhotos.jsx
+ *
+ * - Galería en cuadrícula.
+ * - Tarjetas independientes.
+ * - Imágenes con dimensiones controladas.
+ * - Sin superposición.
+ * - Diseño adaptable.
+ */
+
+/* CONTENEDOR PRINCIPAL */
+
+.work-order-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--border-color, #dfe3e8);
+  border-radius: 12px;
+  background: var(--card-background, #ffffff);
+  color: var(--text-color, #202936);
+  box-sizing: border-box;
+}
+
+.work-order-photos *,
+.work-order-photos *::before,
+.work-order-photos *::after {
+  box-sizing: border-box;
+}
+
+/* ENCABEZADO */
+
+.work-order-photos__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.work-order-photos__header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.work-order-photos__header p {
+  margin: 5px 0 0;
+  color: #687386;
+  font-size: 13px;
+}
+
+.work-order-photos__total {
+  flex-shrink: 0;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #eef2f7;
+  color: #344054;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* CATEGORÍAS ANTES Y DESPUÉS */
+
+.work-order-photos__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.work-order-photos__categories button {
+  flex: 1;
+  min-width: 120px;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #344054;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.work-order-photos__categories button.active {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+/* ZONA DE CAPTURA */
+
+.work-order-photos__capture {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #dfe3e8;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.work-order-photos__capture p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.work-order-photos__capture small {
+  color: #687386;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* BOTONES */
+
+.work-order-photos__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  min-height: 42px;
+  padding: 10px 15px;
+  border: 1px solid #1d4ed8;
+  border-radius: 8px;
+  background: #1d4ed8;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.work-order-photos__button:hover {
+  background: #1e40af;
+}
+
+.work-order-photos__button.secondary {
+  border-color: #cbd5e1;
+  background: #ffffff;
+  color: #344054;
+}
+
+.work-order-photos__button.secondary:hover {
+  background: #f1f5f9;
+}
+
+.work-order-photos__button input {
+  display: none;
+}
+
+.work-order-photos__button.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* SOLO LECTURA */
+
+.work-order-photos__readonly {
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* MENSAJES */
+
+.work-order-photos__message {
+  padding: 11px 13px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.work-order-photos__message.error {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #b42318;
+}
+
+.work-order-photos__message.success {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+/* GALERÍA */
+
+.work-order-photos__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+}
+
+.work-order-photos__gallery h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.work-order-photos__empty {
+  margin: 0;
+  padding: 16px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  color: #687386;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* CUADRÍCULA */
+
+.work-order-photos__grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, 220px), 1fr)
+  );
+  align-items: start;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* TARJETA INDIVIDUAL */
+
+.work-order-photos__card {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid #dfe3e8;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+/* IMÁGENES */
+
+.work-order-photos__card img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  min-height: 190px;
+  max-height: 190px;
+  margin: 0;
+  padding: 5px;
+  object-fit: contain;
+  object-position: center;
+  background: #f1f5f9;
+}
+
+/* INFORMACIÓN DE CADA FOTOGRAFÍA */
+
+.work-order-photos__details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.work-order-photos__details strong {
+  padding: 4px 8px;
+  border-radius: 5px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.work-order-photos__details span {
+  max-width: 100%;
+  color: #475569;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 520px) {
+  .work-order-photos {
+    padding: 13px;
+  }
+
+  .work-order-photos__categories {
+    flex-direction: column;
+  }
+
+  .work-order-photos__categories button {
+    width: 100%;
+  }
+
+  .work-order-photos__button {
+    width: 100%;
+  }
+
+  .work-order-photos__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .work-order-photos__card img {
+    height: 145px;
+    min-height: 145px;
+    max-height: 145px;
+  }
+
+  .work-order-photos__details {
+    padding: 9px;
+  }
+}

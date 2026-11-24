@@ -1,0 +1,496 @@
+
+/*
+ * ANDINACARE - ESTILOS DE ÓRDENES DE TRABAJO
+ */
+
+.work-orders-page {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  min-width: 0;
+  padding-bottom: 32px;
+}
+
+.wo-heading,
+.wo-heading__title,
+.wo-form__heading,
+.wo-form__actions,
+.wo-toolbar,
+.wo-order__top,
+.wo-order__actions,
+.wo-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.wo-heading__title {
+  justify-content: flex-start;
+}
+
+.wo-heading__icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  color: var(--color-primary, #2563eb);
+  background: var(--color-primary-light, #eff6ff);
+  border-radius: 14px;
+}
+
+.wo-eyebrow {
+  color: var(--text-muted, #64748b);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.wo-heading h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  color: var(--text-primary, #172033);
+}
+
+.wo-heading p {
+  margin: 0;
+  color: var(--text-muted, #64748b);
+  font-size: 14px;
+}
+
+.wo-primary-button,
+.wo-secondary-button,
+.wo-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 9px 14px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.wo-primary-button {
+  color: white;
+  background: var(--color-primary, #2563eb);
+}
+
+.wo-primary-button:hover {
+  background: var(--color-primary-dark, #1d4ed8);
+}
+
+.wo-secondary-button {
+  color: var(--text-primary, #334155);
+  background: var(--surface-secondary, #f8fafc);
+  border-color: var(--border-color, #e2e8f0);
+}
+
+.wo-secondary-button:hover {
+  background: var(--surface-hover, #f1f5f9);
+}
+
+.wo-primary-button:disabled,
+.wo-secondary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wo-icon-button {
+  width: 38px;
+  min-height: 38px;
+  padding: 8px;
+  color: var(--text-muted, #64748b);
+  background: transparent;
+}
+
+.wo-danger-button {
+  color: #b91c1c;
+}
+
+.wo-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.wo-stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-height: 94px;
+}
+
+.wo-stat > span {
+  color: var(--text-muted, #64748b);
+  font-size: 13px;
+}
+
+.wo-stat strong {
+  color: var(--text-primary, #172033);
+  font-size: 27px;
+}
+
+.wo-stat > svg {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  color: var(--text-muted, #94a3b8);
+}
+
+.wo-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.wo-message--error {
+  color: #991b1b;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.wo-message--success {
+  color: #166534;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.wo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wo-form__heading {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.wo-form__heading h2,
+.wo-list-heading h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-primary, #172033);
+}
+
+.wo-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.wo-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--text-primary, #334155);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.wo-form input,
+.wo-form select,
+.wo-form textarea,
+.wo-toolbar input,
+.wo-toolbar select {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  color: var(--text-primary, #172033);
+  background: var(--surface-primary, white);
+  border: 1px solid var(--border-color, #cbd5e1);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+}
+
+.wo-form textarea {
+  resize: vertical;
+}
+
+.wo-form input:focus,
+.wo-form select:focus,
+.wo-form textarea:focus,
+.wo-toolbar input:focus,
+.wo-toolbar select:focus {
+  outline: 2px solid var(--color-primary-light, #bfdbfe);
+  border-color: var(--color-primary, #2563eb);
+}
+
+.wo-form__full {
+  grid-column: 1 / -1;
+}
+
+.wo-form__actions {
+  justify-content: flex-end;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+.wo-toolbar {
+  flex-wrap: wrap;
+}
+
+.wo-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 220px;
+  gap: 9px;
+  color: var(--text-muted, #64748b);
+}
+
+.wo-search input {
+  flex: 1;
+}
+
+.wo-toolbar > select {
+  width: auto;
+  min-width: 170px;
+}
+
+.wo-list-heading > span {
+  color: var(--text-muted, #64748b);
+  font-size: 13px;
+}
+
+.wo-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wo-order {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.wo-order__top {
+  align-items: flex-start;
+}
+
+.wo-order__code {
+  color: var(--text-muted, #64748b);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.wo-order__top h3 {
+  margin: 5px 0;
+  color: var(--text-primary, #172033);
+  font-size: 17px;
+}
+
+.wo-order__top p {
+  margin: 0;
+  color: var(--text-muted, #64748b);
+  font-size: 13px;
+}
+
+.wo-status,
+.wo-priority {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.wo-status--pendiente {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.wo-status--en_progreso {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.wo-status--completada {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.wo-status--cancelada {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.wo-priority--baja {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.wo-priority--media {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.wo-priority--alta {
+  color: #9a3412;
+  background: #ffedd5;
+}
+
+.wo-priority--urgente {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.wo-order__description {
+  margin: 0;
+  color: var(--text-secondary, #475569);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.wo-order__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  padding: 13px 0;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  color: var(--text-muted, #64748b);
+  font-size: 12px;
+}
+
+.wo-order__details strong {
+  color: var(--text-primary, #334155);
+}
+
+.wo-order__actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.wo-empty,
+.wo-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 190px;
+  color: var(--text-muted, #64748b);
+  text-align: center;
+}
+
+.wo-empty h3 {
+  margin: 0;
+  color: var(--text-primary, #334155);
+  font-size: 16px;
+}
+
+.wo-empty p,
+.wo-loading p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.wo-loading svg {
+  animation: wo-spin 1s linear infinite;
+}
+
+@keyframes wo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .wo-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .work-orders-page {
+    gap: 16px;
+  }
+
+  .wo-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .wo-heading__title {
+    align-items: flex-start;
+  }
+
+  .wo-heading h1 {
+    font-size: 21px;
+  }
+
+  .wo-heading > button {
+    width: 100%;
+  }
+
+  .wo-summary {
+    gap: 10px;
+  }
+
+  .wo-stat {
+    min-height: 82px;
+  }
+
+  .wo-stat strong {
+    font-size: 23px;
+  }
+
+  .wo-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wo-form__full {
+    grid-column: auto;
+  }
+
+  .wo-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .wo-search {
+    min-width: 0;
+  }
+
+  .wo-toolbar > select,
+  .wo-toolbar > button {
+    width: 100%;
+  }
+
+  .wo-order__top {
+    flex-direction: column;
+  }
+
+  .wo-order__actions > button {
+    flex: 1;
+  }
+
+  .wo-form__actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .wo-form__actions > button {
+    width: 100%;
+  }
+}
